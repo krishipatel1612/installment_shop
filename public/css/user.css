@@ -1,0 +1,420 @@
+/* =========================
+   BOOTSTRAP RESET
+========================= */
+*,::after,::before{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.5;
+  color:#212529;
+  background-color:#f8f9fa
+}
+
+img{
+  max-width:100%;
+  height:auto
+}
+
+a{
+  color:#0d6efd;
+  text-decoration:none
+}
+
+/* =========================
+   FEATURE BOX
+========================= */
+.feature-box{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+  height:100%
+}
+
+/* =========================
+   ALERTS
+========================= */
+.alert{
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px
+}
+.alert-success{
+  background-color:#d4edda;
+  color:#155724;
+  border:1px solid #c3e6cb
+}
+.alert-danger{
+  background-color:#f8d7da;
+  color:#721c24;
+  border:1px solid #f5c6cb
+}
+
+/* =========================
+   TABLE
+========================= */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-bottom:20px
+}
+th,td{
+  padding:3px;
+  border:1px solid #dee2e6;
+  text-align:left
+}
+th{
+  background-color:#e9ecef
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+  max-width:1320px;
+  padding:0 15px;
+  margin:auto
+}
+
+/* =========================
+   ROW & COLUMNS
+========================= */
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  margin-right:-12px;
+  margin-left:-12px
+}
+
+.col-md-3,
+.col-md-4,
+.col-md-2{
+  padding:12px
+}
+
+.col-md-3{ width:25% }
+.col-md-4{ width:33.333333% }
+.col-md-2{ width:16.666666% }
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+  display:flex;
+  align-items:center;
+  padding:0.5rem 1rem;
+  background:#fff;
+  border-bottom:1px solid #dee2e6
+}
+
+.navbar-brand{
+  font-size:1.25rem;
+  font-weight:600;
+  color:#000
+}
+
+.ms-auto{
+  margin-left:auto!important;
+  display:flex;
+  gap:6px
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn{
+  display:inline-block;
+  padding:.375rem .75rem;
+  font-size:1rem;
+  border-radius:.375rem;
+  border:1px solid transparent;
+  cursor:pointer;
+  text-align:center
+}
+
+.btn-light{
+  color:#fff;
+  background-color:cornflowerblue;
+  border-color:#f8f9fa
+}
+
+.btn-primary{
+  color:#fff;
+  background-color:#0d6efd;
+  border-color:#0d6efd;
+}
+
+.btn-primary:hover{
+  background-color:#0b5ed7
+}
+
+.btn-danger{
+  color:#fff;
+  background-color:#dc3545;
+  border-color:#dc3545
+}
+
+.btn-outline-primary{
+  color:#0d6efd;
+  border-color:#0d6efd;
+  background:transparent
+}
+
+/* =========================
+   FORMS
+========================= */
+.form-label{
+  margin-bottom:.5rem;
+  font-weight:500
+}
+
+.form-control{
+  display:block;
+  width:100%;
+  padding:.375rem .75rem;
+  font-size:1rem;
+  border:1px solid #ced4da;
+  border-radius:.375rem;
+  
+}
+.form-select{
+  width:100%;
+  padding:.375rem .75rem;
+  font-size:1rem;
+  border:1px solid #ced4da;
+  border-radius:.375rem
+}
+
+
+/* =========================
+   CARD
+========================= */
+.card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.125);
+  border-radius:.375rem;
+  height:100%;
+  display:flex;
+  flex-direction:column
+}
+
+.card-img-top{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-top-left-radius:.375rem;
+  border-top-right-radius:.375rem
+}
+
+.card-body{
+  flex:1 1 auto;
+  padding:1rem
+}
+
+.card-body h6{
+  font-size:1rem;
+  margin-bottom:.5rem
+}
+
+.card-body p{
+  font-weight:600
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  background:#212529;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  margin-top:40px
+}
+
+/* =========================
+   FILTER BOX
+========================= */
+.filter-box{
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+  margin-bottom:30px;
+  
+}
+
+.filter-form{
+  display:flex;
+  gap:20px;
+  align-items:flex-end;
+  flex-wrap:wrap;
+}
+
+.filter-form > div{
+  flex:1;
+  min-width:200px;
+}
+
+.filter-form label{
+  display:block;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.125);
+  border-radius:.375rem;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.product-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+/* =========================
+   PRODUCT BODY – FINAL FIX
+========================= */
+.product-body{
+  padding:15px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* remove ALL default spacing */
+.product-body h2,
+.product-body h4,
+.product-body p{
+  margin:0;
+  padding:0;
+  line-height:1.2;
+  text-align:center;
+}
+
+/* only controlled small space */
+.product-body p{
+  margin-top:2px;
+  font-weight:600;
+}
+
+/* button slightly lower */
+.product-body .btn-primary,
+.product-body .block{
+  margin-top:10px;
+}
+
+/* =========================
+   BUTTON BLOCK
+========================= */
+.block{
+  display:block;
+  width:100%;
+  text-align:center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:992px){
+  .col-md-3{width:50%}
+  .col-md-4,.col-md-2{width:100%}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:576px){
+  .col-md-3{width:100%}
+  .product-grid{grid-template-columns:1fr}
+}
+
+/* =========================
+   PRODUCT DETAIL – FINAL LOOK
+========================= */
+
+.product-detail-wrapper{
+  width:100%;
+  margin:0;
+}
+
+.product-detail-col{
+  width:100%;
+}
+
+.product-detail-card{
+  width:100%;
+}
+
+/* layout */
+.product-detail-row{
+  align-items:flex-start;
+}
+
+/* LEFT IMAGE */
+.product-detail-image{
+  padding:20px;
+}
+
+.product-detail-img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* RIGHT CONTENT */
+.product-detail-content{
+  padding:20px;
+}
+
+/* EMI OPTIONS */
+.emi-option{
+  display:block;
+  border:1px solid #dee2e6;
+  padding:8px 10px;
+  border-radius:4px;
+  margin-bottom:8px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.emi-option input{
+  margin-right:6px;
+}
+
+.direct-buy{
+  background:#f8f9fa;
+  font-weight:600;
+  color:#198754;
+}
+
+/* buttons */
+.product-actions{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+}

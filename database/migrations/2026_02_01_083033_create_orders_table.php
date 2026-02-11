@@ -19,6 +19,7 @@ return new class extends Migration
     $table->integer('months');
     $table->integer('monthly_amount');
     $table->string('status')->default('pending');
+    $table->string('order_status')->default('processing');
     $table->timestamps();
 });
 

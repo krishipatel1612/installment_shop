@@ -12,7 +12,9 @@ class OrderController extends Controller
     // Show all orders of the authenticated user
     public function index()
     {
-        $orders = Order::with('emiSchedules')  // eager load EMIs
+        $orders = Order::with(['emiSchedules' => function($q) {
+            $q->with('paymentVerifications');
+        }])
             ->where('user_id', Auth::id())
             ->get();
 
@@ -22,7 +24,7 @@ class OrderController extends Controller
     // Show details of a single order
     public function show($id)
     {
-        $order = Order::with('emiSchedules')
+        $order = Order::with(['emiSchedules', 'product', 'reviews.user'])
             ->where('user_id', Auth::id())
             ->findOrFail($id);
 

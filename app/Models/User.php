@@ -46,4 +46,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    // Removed `installments()` relationship: legacy `Installment` model replaced by `EmiSchedule`.
+
 }

@@ -9,19 +9,12 @@
 
 <div class="mb-2">
     <label>Category Name</label>
-    <input type="text" name="name" class="form-control" placeholder="Enter category name">
+    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter category name" value="{{ old('name') }}" required>
     @error('name')
-        <small class="text-danger">{{ $message }}</small>
+        <small class="text-danger d-block mt-1">{{ $message }}</small>
     @enderror
 </div>
 
-<div class="mb-2">
-    <label>Status</label>
-    <select name="status" class="form-control">
-        <option value="1">Active</option>
-        <option value="0">Inactive</option>
-    </select>
-</div>
 
 <button class="btn btn-success">Save Category</button>
 <a href="{{ route('category.index') }}" class="btn btn-secondary">Back</a>

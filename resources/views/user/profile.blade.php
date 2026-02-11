@@ -14,17 +14,20 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" id="name" class="form-control" value="{{ Auth::user()->name }}" required>
+            <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', Auth::user()->name) }}" required>
+            @error('name') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
         </div><br>
 
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" id="email" class="form-control" value="{{ Auth::user()->email }}" required>
+            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', Auth::user()->email) }}" required>
+            @error('email') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
         </div><br>
 
         <div class="mb-3">
             <label for="password" class="form-label">Password <small>(Leave blank if unchanged)</small></label>
-            <input type="password" name="password" id="password" class="form-control">
+            <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror">
+            @error('password') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
         </div><br>
 
         <button type="submit" class="btn btn-primary">Update Profile</button>

@@ -17,19 +17,19 @@
     <div class="row text-center mb-5">
         <div class="col-md-4">
             <div class="feature-box">
-                <h5>📦 Products</h5>
+                <h5>Products</h5>
                 <p>Multiple categories & brands</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="feature-box">
-                <h5>💳 EMI Options</h5>
+                <h5>EMI Options</h5>
                 <p>3 / 6 / 9 / 12 months EMI</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="feature-box">
-                <h5>🛒 Easy Checkout</h5>
+                <h5> Easy Checkout</h5>
                 <p>Fast & secure payments</p>
             </div>
         </div>

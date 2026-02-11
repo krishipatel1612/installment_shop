@@ -35,10 +35,23 @@ class ProductController extends Controller
     {
         $request->validate([
             'category_id'   => 'required',
-            'name'          => 'required|min:3',
+            'name'          => 'required|min:3|max:255',
             'price'         => 'required|numeric|min:1',
-            'image'         => 'required|image',
-            'interest_rate' => 'nullable|numeric|min:0'
+            'image'         => 'required|image|max:2048',
+            'interest_rate' => 'nullable|numeric|min:0|max:100'
+        ], [
+            'category_id.required' => 'Please select a category',
+            'name.required' => 'Product name is required',
+            'name.min' => 'Product name must be at least 3 characters',
+            'name.max' => 'Product name cannot exceed 255 characters',
+            'price.required' => 'Price is required',
+            'price.numeric' => 'Price must be a valid number',
+            'price.min' => 'Price must be greater than 0',
+            'image.required' => 'Please select a product image',
+            'image.image' => 'The file must be an image (JPG, PNG, etc)',
+            'image.max' => 'Image size cannot exceed 2MB',
+            'interest_rate.numeric' => 'Interest rate must be a number',
+            'interest_rate.max' => 'Interest rate cannot exceed 100%'
         ]);
 
         // IMAGE UPLOAD
@@ -93,9 +106,22 @@ class ProductController extends Controller
     {
         $request->validate([
             'category_id'   => 'required',
-            'name'          => 'required|min:3',
+            'name'          => 'required|min:3|max:255',
             'price'         => 'required|numeric|min:1',
-            'interest_rate' => 'nullable|numeric|min:0'
+            'image'         => 'nullable|image|max:2048',
+            'interest_rate' => 'nullable|numeric|min:0|max:100'
+        ], [
+            'category_id.required' => 'Please select a category',
+            'name.required' => 'Product name is required',
+            'name.min' => 'Product name must be at least 3 characters',
+            'name.max' => 'Product name cannot exceed 255 characters',
+            'price.required' => 'Price is required',
+            'price.numeric' => 'Price must be a valid number',
+            'price.min' => 'Price must be greater than 0',
+            'image.image' => 'The file must be an image (JPG, PNG, etc)',
+            'image.max' => 'Image size cannot exceed 2MB',
+            'interest_rate.numeric' => 'Interest rate must be a number',
+            'interest_rate.max' => 'Interest rate cannot exceed 100%'
         ]);
 
         $product   = Product::findOrFail($id);

@@ -32,7 +32,7 @@
         <label>Search Product</label>
         <input type="text" name="search" class="form-control"
                value="{{ request('search') }}"
-               placeholder="Search products...">
+              >
     </div>
 
     <div>

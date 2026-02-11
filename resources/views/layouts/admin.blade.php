@@ -13,7 +13,7 @@
 
 <!-- HEADER -->
 <header class="admin-header">
-    <div class="logo">Admin Panel</div>
+    <div class="logo">🧑🏻‍💻 Admin Panel</div>
     <div class="logout-btn" onclick="window.location='/logout'">Logout</div>
 </header>
 
@@ -21,7 +21,6 @@
 <div class="admin-wrapper">
 
     <!-- SIDEBAR -->
-   <!-- SIDEBAR -->
 <aside class="admin-sidebar">
     <h6 class="menu-title">Menu</h6>
 
@@ -33,9 +32,20 @@
         Category
     </a>
 
-   <a href="{{ route('product.index') }}" class="menu-item">Products</a>
+    <a href="{{ route('product.index') }}" class="menu-item">
+        Products
+    </a>
+
     <a href="{{ url('admin/orders') }}" class="menu-item">
         Orders
+    </a>
+
+    <a href="{{ route('admin.payments.verification') }}" class="menu-item">
+        Payment Verifications
+    </a>
+
+    <a href="{{ route('admin.reviews.index') }}" class="menu-item">
+        Customer Reviews
     </a>
 </aside>
 

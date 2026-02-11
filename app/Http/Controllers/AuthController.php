@@ -23,8 +23,13 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email'    => 'required|email',
-            'password' => 'required'
+            'email'    => 'required|email|regex:/^[^@\s]+@[^@\s]+\.[^@\s]+$/',
+            'password' => 'required|min:3'
+        ], [
+            'email.required' => 'Email is required',
+            'email.email' => 'Please enter a valid email address',
+            'password.required' => 'Password is required',
+            'password.min' => 'Password must be at least 3 characters'
         ]);
 
         /* ===============================
@@ -87,6 +92,15 @@ class AuthController extends Controller
             'name'     => 'required|string|max:50',
             'email'    => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed'
+        ], [
+            'name.required' => 'Name is required',
+            'name.max' => 'Name cannot exceed 50 characters',
+            'email.required' => 'Email is required',
+            'email.email' => 'Please enter a valid email address',
+            'email.unique' => 'This email is already registered',
+            'password.required' => 'Password is required',
+            'password.min' => 'Password must be at least 6 characters',
+            'password.confirmed' => 'Passwords do not match'
         ]);
 
         User::create([

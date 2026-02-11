@@ -18,28 +18,31 @@
         <!-- Category -->
         <div class="mb-3">
             <label for="category_id" class="form-label">Category</label>
-            <select name="category_id" id="category_id" class="form-control">
+            <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}" 
-                        {{ $category->id == $product->category_id ? 'selected' : '' }}>
+                        {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
                         {{ $category->name }}
                     </option>
                 @endforeach
             </select>
+            @error('category_id') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
         </div>
 
         <!-- Name -->
         <div class="mb-3">
             <label for="name" class="form-label">Product Name</label>
-            <input type="text" name="name" class="form-control" 
-                   value="{{ old('name', $product->name) }}">
+            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" 
+                   value="{{ old('name', $product->name) }}" required>
+            @error('name') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
         </div>
 
         <!-- Price -->
         <div class="mb-3">
             <label for="price" class="form-label">Price (₹)</label>
-            <input type="number" name="price" id="price" class="form-control" 
-                   value="{{ old('price', $product->price) }}" step="0.01">
+            <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" 
+                   value="{{ old('price', $product->price) }}" step="0.01" required>
+            @error('price') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
         </div>
 
         <!-- Interest Rate (EMI) -->
@@ -51,7 +54,8 @@
         <!-- Image -->
         <div class="mb-3">
             <label for="image" class="form-label">Product Image</label>
-            <input type="file" name="image" class="form-control">
+            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+            @error('image') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
             @if($product->image)
                 <img src="{{ asset('uploads/products/'.$product->image) }}" width="100" style="margin-top:10px;">
             @endif

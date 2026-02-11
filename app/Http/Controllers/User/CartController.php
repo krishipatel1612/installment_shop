@@ -24,33 +24,41 @@ class CartController extends Controller
     public function add(Request $request)
     {
         $request->validate([
-            'product_id'=>'required',
-            'emi_id'=>'required'
+            'product_id' => 'required',
+            'emi_id' => 'required'
         ]);
 
         $product = Product::findOrFail($request->product_id);
         $cart = session()->get('cart', []);
 
         // EMI option selected
-        if($request->emi_id != 0){
+        if ($request->emi_id != 0) {
+
             $emi = InstallmentPlan::findOrFail($request->emi_id);
+
             $cart[$product->id] = [
+                'id' => $product->id, // ✅ ADDED (important for checkout)
                 'name' => $product->name,
                 'price' => $product->price,
                 'months' => $emi->months,
                 'monthly_amount' => $emi->monthly_amount,
                 'image' => $product->image
             ];
+
             $message = "Product added to cart with EMI option.";
+
         } else {
+
             // Direct Buy (Full Payment)
             $cart[$product->id] = [
+                'id' => $product->id, // ✅ ADDED (important for checkout)
                 'name' => $product->name,
                 'price' => $product->price,
-                'months' => 1, // single month = full payment
+                'months' => 1,
                 'monthly_amount' => $product->price,
                 'image' => $product->image
             ];
+
             $message = "Product purchased directly!";
         }
 
@@ -66,11 +74,11 @@ class CartController extends Controller
     {
         $cart = session()->get('cart', []);
 
-        if(isset($cart[$id])){
+        if (isset($cart[$id])) {
             unset($cart[$id]);
             session()->put('cart', $cart);
         }
 
-        return back()->with('success','Item removed');
+        return back()->with('success', 'Item removed');
     }
 }

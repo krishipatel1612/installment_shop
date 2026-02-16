@@ -8,7 +8,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-3">
-    <a href="{{ route('user.home') }}" class="navbar-brand text-white fw-bold">🛒Installment Shop</a>
+    <a href="{{ route('user.home') }}" class="navbar-brand text-white fw-bold">🛒 Installment Shop</a>
     <div class="ms-auto">
         <a href="{{ route('user.home') }}" class="btn btn-light btn-sm me-2">Home</a>
         <a href="{{ url('/products') }}" class="btn btn-light btn-sm me-2">Products</a>

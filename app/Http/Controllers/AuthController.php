@@ -98,6 +98,8 @@ class AuthController extends Controller
             'email.required' => 'Email is required',
             'email.email' => 'Please enter a valid email address',
             'email.unique' => 'This email is already registered',
+            'phone.required' => 'Phone number is required',
+            'address.required' => 'Address is required',
             'password.required' => 'Password is required',
             'password.min' => 'Password must be at least 6 characters',
             'password.confirmed' => 'Passwords do not match'
@@ -106,6 +108,8 @@ class AuthController extends Controller
         User::create([
             'name'     => $request->name,
             'email'    => $request->email,
+            'phone_no'    => $request->phone_no,
+            'address'  => $request->address,
             'password' => Hash::make($request->password),
             'role'     => 'user'
         ]);

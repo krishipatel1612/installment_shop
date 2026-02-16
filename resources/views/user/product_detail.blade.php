@@ -40,9 +40,10 @@
                                 <label class="emi-option">
                                     <input type="radio" name="emi_id" value="{{ $emi->id }}" required>
                                     {{ $emi->months }} Months —
-                                    ₹ {{ number_format($emi->monthly_amount) }} / month
+                                    ₹ {{ number_format($emi->monthly_amount, 2) }} / month
                                 </label>
                             @endforeach
+
 
                             <!-- DIRECT BUY -->
                             <label class="emi-option direct-buy">

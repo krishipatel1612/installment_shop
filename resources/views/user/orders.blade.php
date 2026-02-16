@@ -62,7 +62,7 @@
                                     <span class="text-muted">—</span>
                                 @endif
                             </td>
-                            <td><strong>₹{{ number_format($emi->total_due, 2) }}</strong></td>
+                            <td>₹{{ number_format($emi->amount, 2) }}</td>
                             <td>
                                 @if($emi->status === 'Paid')
                                     <span class="badge bg-success">Paid</span>

@@ -33,7 +33,7 @@
                         </td>
                         <td>₹ {{ number_format($item['price']) }}</td>
                         <td>{{ $item['months'] }} Months</td>
-                        <td>₹ {{ number_format($item['monthly_amount']) }}</td>
+                        <td>₹ {{ number_format($item['monthly_amount'], 2) }}</td>
                         <td>
                             <a href="{{ route('cart.remove', $id) }}" class="btn btn-sm btn-danger">
                                 Remove

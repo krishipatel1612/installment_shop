@@ -66,6 +66,17 @@
                     @error('email') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
                 </div>
 
+                <div 
+                    class="form-group">
+                    <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone Number" value="{{ old('phone') }}" required>
+                    @error('phone') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
+
+                </div>
+                <div class="form-group">
+                    <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="Address" value="{{ old('address') }}" required>
+                    @error('address') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
+                </div>
+                
                 <div class="form-group">
                     <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" required>
                     @error('password') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror
